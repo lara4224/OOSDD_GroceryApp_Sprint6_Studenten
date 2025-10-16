@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Grocery.App.Views.NewProductView"
+             xmlns:vm="clr-namespace:Grocery.App.ViewModels"
+             xmlns:m="clr-namespace:Grocery.Core.Models;assembly=Grocery.Core"
+             x:DataType="vm:NewProductViewModel"
+             Title="Nieuw product toevoegen">
+    <Shell.TitleView>
+        <Grid>
+            <Label Text="Nieuw product toevoegen" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center" />
+        </Grid>
+    </Shell.TitleView>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Naam" />
+            <Entry Text="{Binding Name}" Placeholder="Productnaam" />
+            <Label Text="Voorraad" />
+            <Entry Text="{Binding Stock}" Keyboard="Numeric" Placeholder="Aantal" />
+            <Label Text="THT-datum" />
+            <DatePicker Date="{Binding ShelfLife}" />
+            <Label Text="Prijs" />
+            <Entry Text="{Binding Price}" Keyboard="Numeric" Placeholder="Prijs" />
+            <Button Text="Toevoegen" Command="{Binding AddProductCommand}" />
+            <Label Text="{Binding ErrorMessage}" TextColor="Red" IsVisible="{Binding ErrorMessage}"/>
+            <Label Text="{Binding Message}" TextColor="LimeGreen" IsVisible="{Binding Message}"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
