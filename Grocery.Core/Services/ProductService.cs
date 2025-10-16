@@ -37,5 +37,10 @@ namespace Grocery.Core.Services
         {
             return _productRepository.Update(item);
         }
+
+        public bool NameExists(string name)
+        {
+            return _productRepository.NameExists(name);
+        }
     }
 }
