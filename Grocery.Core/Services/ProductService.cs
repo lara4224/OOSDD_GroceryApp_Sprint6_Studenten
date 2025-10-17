@@ -20,7 +20,7 @@ namespace Grocery.Core.Services
 
         public Product Add(Product item)
         {
-            throw new NotImplementedException();
+            return _productRepository.Add(item);
         }
 
         public Product? Delete(Product item)
@@ -36,6 +36,11 @@ namespace Grocery.Core.Services
         public Product? Update(Product item)
         {
             return _productRepository.Update(item);
+        }
+
+        public bool NameExists(string name)
+        {
+            return _productRepository.NameExists(name);
         }
     }
 }

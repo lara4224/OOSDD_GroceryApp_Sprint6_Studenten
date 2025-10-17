@@ -13,5 +13,7 @@ namespace Grocery.Core.Interfaces.Services
         public Product? Get(int id);
 
         public Product? Update(Product item);
+
+        public bool NameExists(string name);
     }
 }
